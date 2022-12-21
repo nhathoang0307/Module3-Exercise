@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        #main {
+            background: rgb(32, 255, 12);
+            width: 69%;
+            height: 500px; 
+            float: left;
+            margin-right: 1%;
+            overflow:auto;
+
+        }
+
+        #extra{
+            background: rgb(148, 125, 50);
+            width: 30%;
+            height: 500px; 
+            float: left;
+            margin-bottom: 10px;
+
+        }
+
+        #footer{
+            background: rgb(180, 174, 150);
+            width: 100%;
+            height: 100px; 
+            clear: both;
+        }
+
+        /* div  {
+            padding: 5px 20px;
+        } */
+
+        #header {
+            background: red;
+            width: 100%;
+            height: 100px;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #logo{
+            background-color: darkgray;
+            width: 30%;
+            height: 100px;
+            margin-bottom: 10px;
+            float: left;
+        }
+
+        #banner{
+            background-color: darkmagenta;
+            width: 70%;
+            height: 100px;
+            margin-bottom: 10px;
+            float: left;
+        }
+
+
+        ul.menu{
+            background-color: rgb(17, 0, 255);
+            list-style-type: none;
+            padding: 0;
+
+        }
+        #bar > ul.menu{
+            display: flex;
+        }
+
+        ul.menu > li {
+            max-width: 200px;
+            border-right: 1px solid rgb(255, 255, 255);
+            
+        }
+
+        ul.menu > li > a{
+            display: block;
+            padding: 10px;
+        }
+
+        ul.menu > li > input,button {
+            padding: 5px 5px;
+            margin: 5px;
+        }
+        
+        
+        ul.menu a {
+            color: rgb(0, 0, 0);
+        }
+
+        
+        #head-link{
+            background: rgb(48, 166, 187);
+            width: 100%;
+            margin-bottom: 10px;
+            clear: both;
+            padding: 0;
+        }
+
+        ul.menu > li >a:hover{
+            background-color: red;
+            color: rgb(189, 217, 34);
+        }
+        
+        .left{
+            margin-left: auto;
+        }
+    
+        .subcontent{
+            display: none;
+        }
+
+        .sub:hover .subcontent{
+            display: block;
+            position:absolute;
+        }
+
+        #search{
+            border-radius: 10px;
+        }
+
+        .search-btn{
+            border-radius: 30px;
+        }
+ 
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">logo</div>
+        <div id="banner">banner</div>
+    </div>
+    <div id="head-link">
+        <div id="bar">
+            <ul class="menu">
+                <li><a href="#">Home</a> </li>
+                <li class="sub">
+                    <a href="#">Students</a>
+                    <ul class="menu subcontent">
+                        <li><a href="#"> 1</a></li>
+                        <li><a href="#">Stn 2</a></li>
+                        <li><a href="#">Std 3Std 3Std 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li class="left"> <input type="search" id="search" name="gsearch" placeholder="search"></li>
+                <li><button type="submit" class="search-btn">
+                        <span class="icon-search">click</span>
+                    </button></li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="main">
+        <p>We rank Express Entry candidates in the pool using a points-based system called the Comprehensive Ranking System (CRS). About every 2 weeks, we invite the top candidates in the pool to apply for permanent residence during rounds of invitations. The table below lists all the Express Entry rounds of invitations. You can search, filter and sort the information by any of the fields.
+        We rank Express Entry candidates in the pool using a points-based system called the Comprehensive Ranking System (CRS). About every 2 weeks, we invite the top candidates in the pool to apply for permanent residence during rounds of invitations. The table below lists all the Express Entry rounds of invitations. You can search, filter and sort the information by any of the fields.
+    </p> 
+
+    </div>
+    <div id="extra">
+    </div>
+    <div id="footer">
+    </div>
+</body>
+</html>
