@@ -22,7 +22,6 @@
 <!-- End of nav bar -->
 <div class="register-area" style="background-color: rgb(249, 249, 249);">
   <div class="container">
-
     <div class="col-md-6 chinhsuathem">
       <div class="box-for overflow">
         <div class="col-md-12 col-xs-12 login-blocks">

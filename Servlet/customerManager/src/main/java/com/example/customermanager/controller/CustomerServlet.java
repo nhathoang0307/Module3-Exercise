@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/customers", ""})
+@WebServlet(urlPatterns = {"/customers"})
 public class CustomerServlet extends HttpServlet {
 
     private ICustomerService customerService;
@@ -88,6 +88,8 @@ public class CustomerServlet extends HttpServlet {
         }
 
         List<Customer> customersPagging = customerService.getAllCustomersByKwAndIdCountryPagging(kw, idCountry, (page - 1) * numberOfPage, numberOfPage);
+
+
         req.setAttribute("kw", kw);
         req.setAttribute("idCountry", idCountry);
         req.setAttribute("customers", customersPagging);

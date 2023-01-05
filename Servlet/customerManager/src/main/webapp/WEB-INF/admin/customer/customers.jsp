@@ -14,7 +14,8 @@
         .search-form {
         display: flex;
         border: none;
-        margin-right: 20px;
+        margin: 20px;
+        padding: 0px 0px;
         }
 
         .search-form>input {
@@ -83,6 +84,7 @@
                         <th scope="col">Country</th>
                         <th scope="col">Picture</th>
                         <th scope="col">Action</th>
+                        <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -114,6 +116,7 @@
                             <a href="/customers?page=${currentPage - 1}&kw=${requestScope.kw}&idCountry=${requestScope.idCountry}" class="page-link"><i class="fa fa-angle-left"></i></a>
                         </li>
                     </c:if>
+
                     <c:forEach begin="1" end="${noOfPages}" var="i">
                         <c:choose>
                             <c:when test="${currentPage eq i}">
@@ -128,6 +131,7 @@
                             </c:otherwise>
                         </c:choose>
                     </c:forEach>
+
                     <c:if test="${currentPage lt noOfPages}">
                         <li class="page-item">
                             <a href="/customers?page=${currentPage + 1}&kw=${requestScope.kw}&idCountry=${requestScope.idCountry}" class="page-link"><i class="fa fa-angle-right"></i></a>
@@ -141,7 +145,6 @@
     </div>
     <!-- end col -->
 </div>
-
 <jsp:include page="/WEB-INF/admin/layout/footer.jsp"></jsp:include>
 
 </body>

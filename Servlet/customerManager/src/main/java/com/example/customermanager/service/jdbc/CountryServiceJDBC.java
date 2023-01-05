@@ -35,8 +35,6 @@ public class CountryServiceJDBC extends DatabaseContext implements ICountryServi
     private Country getCountryFromResulSet(ResultSet rs) throws SQLException {
         int id = rs.getInt("id");
         String name = rs.getString("name");
-
-
         Country country = new Country(id, name);
         return country;
     }

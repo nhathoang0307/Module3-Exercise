@@ -84,7 +84,6 @@ public class signUpServlet extends HttpServlet {
             user.setPassword(password1);
         } else {
             errors.add("Mat khau khong trung");
-
         }
     }
 }

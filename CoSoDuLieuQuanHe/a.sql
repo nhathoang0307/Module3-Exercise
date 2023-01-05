@@ -1,1 +1,0 @@
-`thcreatsql`.`student`
