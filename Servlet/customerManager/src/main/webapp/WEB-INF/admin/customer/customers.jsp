@@ -66,7 +66,6 @@
                             <option value="-1">All</option>
                             <c:forEach items="${applicationScope.countries}" var="country">
                                 <option value="${country.getId()}" <c:if test="${requestScope.idCountry == country.getId()}"> selected</c:if>>${country.getName()}
-
                                 </option>
                             </c:forEach>
                         </select>

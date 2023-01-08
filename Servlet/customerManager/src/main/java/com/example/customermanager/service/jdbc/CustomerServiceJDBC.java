@@ -149,7 +149,6 @@ public class CustomerServiceJDBC extends DatabaseContext implements ICustomerSer
     public void updateCustomer(Customer customer) {
         try {
             Connection connection = getConnection();
-
             //UPDATE `customer` SET  `name` = ?, `address` = ?, `idCountry` = ?, `picture` = ?  WHERE (`id` = ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CUSTOMER);
             preparedStatement.setString(1, customer.getName());
@@ -157,10 +156,8 @@ public class CustomerServiceJDBC extends DatabaseContext implements ICustomerSer
             preparedStatement.setLong(3, customer.getIdCountry());
             preparedStatement.setString(4, customer.getPicture());
             preparedStatement.setLong(5, customer.getId());
-
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
-
             connection.close();
         } catch (SQLException sqlException) {
             printSQLException(sqlException);
