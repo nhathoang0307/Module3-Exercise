@@ -83,7 +83,7 @@
             <form action="/trangchu?action=search" method="post">
                 <div class="input-group">
                     <input type="text" class="form-control" value="${requestScope.searchStr}"
-                           placeholder="Search for products" name="inputSearch">
+                           placeholder="Search for products" name="inputSearch" id="idTxtSearch">
                     <div class="input-group-append">
                         <button style="border: none;padding: 0px;">
                             <span class="input-group-text bg-transparent text-primary" style="padding: 10px;">
@@ -92,6 +92,7 @@
                         </button>
                     </div>
                 </div>
+                <input type="hidden" name="option" value="${requestScope.info}">
             </form>
         </div>
         <div class="col-lg-4 col-6 text-right">
@@ -108,7 +109,7 @@
     <div class="row px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
             <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse"
-               href="#navbar-vertical" style="height: 65px; padding: 0 30px; position: relative;">
+               href="#" style="height: 65px; padding: 0 30px; position: relative;">
                 <h6 class="text-dark m-0" style="padding-top: 20px; position: absolute;"><i class="fa fa-bars mr-2" ></i>Categories</h6>
             </a>
             <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
@@ -147,8 +148,8 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/trangchu" class="nav-item nav-link active">Home</a>
-                        <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                        <a href="#" class="nav-item nav-link">Shop</a>
+                        <a href="#" class="nav-item nav-link">Shop Detail</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i
                                     class="fa fa-angle-down mt-1"></i></a>
@@ -157,7 +158,7 @@
                                 <a href="/checkout" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="#" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                         <a href="/cart" class="btn px-0 ml-3">

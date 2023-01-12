@@ -26,4 +26,11 @@ public interface IProductService {
     void setUpdateProductQuantity(int quantity, String id);
 
     int getQuantityProductById(String id);
+
+    List<Product> sortASC();
+    List<Product> sortDESC();
+
+     List<Product> sortSearchASC(String sort);
+
+    List<Product> sortSearchDESC(String sort);
 }

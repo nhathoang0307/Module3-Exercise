@@ -95,7 +95,10 @@
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Price</th>
+                    <th>Price
+                        <a href="/product?action=sortPriceByASC"><button style="border: none;background-color: #343a40;color: white;"><i class="fa fa-angle-up mt-1"></i></button></a>
+                        <a href="/product?action=sortPriceByDESC"><button style="border: none;background-color: #343a40;color: white;"><i class="fa fa-angle-down mt-1"></i></button></a>
+                    </th>
                     <th>Quantity</th>
                     <th>description</th>
                     <th>Picture</th>
@@ -104,10 +107,10 @@
                     <th>Action</th>
                 </tr>
                 </thead>
-                <tbody class="align-middle">
+                <tbody class="align-middle" >
                 <c:forEach items="${requestScope.products}" var="product">
-                    <tr>
-                        <td class="align-middle">${product.getId()}</td>
+                    <tr >
+                        <td  class="align-middle">${product.getId()}</td>
                         <td class="align-middle">${product.getName()}</td>
                         <td class="align-middle">$${product.getPrice()}</td>
                         <td class="align-middle">${product.getQuantity()}</td>
@@ -157,6 +160,7 @@
 </div>
 <!-- Cart End -->
 <!-- Footer Start -->
+
 
 <jsp:include page="/WEB-INF/customer/footer.jsp"></jsp:include>
 <!-- Back to Top -->

@@ -162,24 +162,24 @@
 <div class="container-fluid">
     <div class="row px-xl-5 pb-3">
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+            <a href="/user"><div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
                 <h3 class="text-primary m-0 mr-3" style="text-align: center;">User Total</h3>
-                <h1 class="m-0 mr-3" style="text-align: center;"><%=request.getParameter("totalUser")%></h1></div>
+                <h1 class="m-0 mr-3" style="text-align: center;"><%=request.getParameter("totalUser")%></h1></div></a>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+            <a href="/manager-customer?action=listcustomer"><div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
                 <h3 class="text-primary m-0 mr-3" style="text-align: center;">Customer Total</h3>
-                <h1 class="m-0 mr-3" style="text-align: center;"><%=request.getParameter("totalCustomer")%> </h1></div>
+                <h1 class="m-0 mr-3" style="text-align: center;"><%=request.getParameter("totalCustomer")%> </h1></div></a>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+            <a href="/product"><div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
                 <h3 class="text-primary m-0 mr-3" style="text-align: center;">Product Total</h3>
-                <h1 class="m-0 mr-3" style="text-align: center;"><%=request.getParameter("totalProduct")%></h1></div>
+                <h1 class="m-0 mr-3" style="text-align: center;"><%=request.getParameter("totalProduct")%></h1></div></a>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
+            <a href="/manager-oder"><div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
                 <h3 class="text-primary m-0 mr-3" style="text-align: center;">Order Total</h3>
-                <h1 class="m-0 mr-3" style="text-align: center;"><%=request.getParameter("totalOrder")%></h1></div>
+                <h1 class="m-0 mr-3" style="text-align: center;"><%=request.getParameter("totalOrder")%></h1></div></a>
         </div>
     </div>
 </div>

@@ -51,10 +51,10 @@
     <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
         <i class="checkmark">✓</i>
     </div>
-    <div><h1>ĐẶT HÀNG THÀNH CÔNG</h1></div>
+    <div><h1>Order Success</h1></div>
     <div>
         <a href="/trangchu">
-            <button class="btn btn-primary">VỀ TRANG CHỦ</button>
+            <button class="btn btn-primary">Back Home</button>
         </a>
     </div>
 </div>

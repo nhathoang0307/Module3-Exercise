@@ -62,7 +62,7 @@ public class homeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       init();
+        init();
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/admin/home.jsp");
         requestDispatcher.forward(request, response);
 

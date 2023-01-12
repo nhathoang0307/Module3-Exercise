@@ -55,10 +55,7 @@ public class signupServlet extends HttpServlet {
         newUser.setRole(role);
         validatePassword(request, errors, newUser);
         newUser.setCreatedTime(LocalDateTime.now());
-
         String image = request.getParameter("file");
-
-
         for (Part part : request.getParts()) {
             System.out.println("Content type of Part: " + part.getContentType());
             System.out.println("Name of Part: " + part.getName());
@@ -84,7 +81,7 @@ public class signupServlet extends HttpServlet {
             userService.insertUser(newUser);
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("user",newUser);
-            request.setAttribute("messagesuccess", "Đăng kí thành công");
+            request.setAttribute("message", "Sign Up Success");
             loginServlet.doPost(request,resp);
 //            requestDispatcher = request.getRequestDispatcher("/WEB-INF/login.jsp");
 //            requestDispatcher.forward(request, resp);

@@ -77,6 +77,12 @@ public class ProductServlet extends HttpServlet {
                 case "remove":
                     deleteProduct(request, response);
                     break;
+                case "sortPriceByASC":
+                    sortPriceByASC(request, response);
+                    break;
+                case "sortPriceByDESC":
+                    sortPriceByDESC(request, response);
+                    break;
                 default:
                     listProduct(request, response);
                     break;
@@ -84,6 +90,20 @@ public class ProductServlet extends HttpServlet {
         } catch (ServletException e) {
             e.printStackTrace();
         }
+    }
+
+    private void sortPriceByDESC(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Product> products = productService.sortDESC();
+        request.setAttribute("products", products);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/admin/product/view.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private void sortPriceByASC(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Product> products = productService.sortASC();
+        request.setAttribute("products", products);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/admin/product/view.jsp");
+        dispatcher.forward(request, response);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class loginServlet extends HttpServlet {
             user = iUserService.checklogin(email, password);
             System.out.println(user);
             if (iUserService.checkEmail(email) == true && iUserService.checkPassword(password) == false) {
-                req.setAttribute("errors", "Sai mật khẩu");
+                req.setAttribute("errors", "Wrong Password");
                 requestDispatcher = req.getRequestDispatcher("/WEB-INF/login.jsp");
                 requestDispatcher.forward(req, resp);
             } else if (iUserService.checkEmail(email) == false && iUserService.checkPassword(password) == true) {
-                req.setAttribute("errors", "Sai email");
+                req.setAttribute("errors", "Wrong email");
                 requestDispatcher = req.getRequestDispatcher("/WEB-INF/login.jsp");
                 requestDispatcher.forward(req, resp);
             } else if (iUserService.checkEmail(email) == false && iUserService.checkPassword(password) == false) {
-                req.setAttribute("errors", "Tai Khoan khong ton tai trong he thong");
+                req.setAttribute("errors", "The account does not exist in the system, You need to register");
                 requestDispatcher = req.getRequestDispatcher("/WEB-INF/login.jsp");
                 requestDispatcher.forward(req, resp);
             } else if (iUserService.checkEmail(email) == true && iUserService.checkPassword(password) == true) {
@@ -60,7 +60,11 @@ public class loginServlet extends HttpServlet {
                 if (user.getRole() == 1) {
                     resp.sendRedirect("/home");
                 } else {
-                    resp.sendRedirect("/trangchu");
+                    req.setAttribute("message", "Logged in successfully");
+                    requestDispatcher = req.getRequestDispatcher("/WEB-INF/home.jsp");
+                    requestDispatcher.forward(req, resp);
+//                    resp.sendRedirect("/trangchu");
+
                 }
             }
         }

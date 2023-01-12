@@ -135,7 +135,7 @@
                                                                                   style="font-size:24px"></i>
                             </a>
                             <a href="/user?action=removeuser&id=${user.getId()}"
-                               onclick="return confirm('Bạn có chắc chắn xóa ${user.getFullName()} không?');"><i
+                               onclick="return confirm('Are you sure remove ${user.getFullName()}?');"><i
                                     class="fa fa-times"
                                     style="font-size:24px; color: red;"></i>
                             </a>

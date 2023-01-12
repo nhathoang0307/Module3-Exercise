@@ -47,7 +47,7 @@
     <input class="pass" type="password" align="center" name="password" placeholder="Password">
     <button class="submit" align="center">Sign in</button>
     <p class="forgot" align="center"><a href="#">Forgot Password? </a> </p>
-    <p align="center" >Bạn chưa có tài khoản?</p>
+    <p align="center" >Do not have an account?</p>
   </form>
   <a href="/signup"><button class="submit" align="center" >Sign Up</button></a>
 </div>

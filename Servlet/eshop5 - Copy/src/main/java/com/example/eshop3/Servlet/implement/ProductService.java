@@ -18,6 +18,10 @@ public class ProductService extends DatabaseContext implements IProductService {
     private static final String INSERT_PRODUCT = " insert into product(id, name, price, quantity, description, image, created_time) VALUE (?,?,?,?,?,?,?);";
     private static final String SELECT_PRODUCT_BY_ID = "select * from product where id =?;";
     private static final String SELECT_ALL_PRODUCTS = "select * from product;";
+    private static final String SORT_ALL_PRICE_ASC = "SELECT * FROM product ORDER BY price;";
+    private static final String SORT_SEARCH_ALL_PRICE_ASC = "SELECT * FROM product where `name` like ? ORDER BY price;";
+    private static final String SORT_SEARCH_ALL_PRICE_DESC = "SELECT * FROM product where `name` like ? ORDER BY price DESC;";
+    private static final String SORT_ALL_PRICE_DESC = "SELECT * FROM product ORDER BY price DESC;";
     private static final String DELETE_PRODUCT = "delete from product where id = ?;";
     private static final String UPDATE_PRODUCT = "update product set name =?, price=?, quantity =?, description =?, image=?, updated_time=? where id = ?;";
 
@@ -235,6 +239,131 @@ public class ProductService extends DatabaseContext implements IProductService {
             AppUtils.printSQLException(ex);
         }
         return 0;
+    }
+
+    @Override
+    public List<Product> sortASC() {
+        List<Product> products = new ArrayList<>();
+        try {
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SORT_ALL_PRICE_ASC);
+            ResultSet rs = preparedStatement.executeQuery();
+            System.out.println(this.getClass() + " selectAllProduct " + preparedStatement);
+            while (rs.next()) {
+                String id = rs.getString("id");
+                String name = rs.getString("name");
+                int price = rs.getInt("price");
+                int quantity = rs.getInt("quantity");
+                String description = rs.getString("description");
+                String image = rs.getString("image");
+                Product product = new Product(id, name, price, quantity, description, image);
+                LocalDateTime createdTime = AppUtils.stringToLocalDateTime(rs.getString("created_time"));
+                product.setCreatedTime(createdTime);
+                if (rs.getString("updated_time") != null) {
+                    LocalDateTime updatedTime = AppUtils.stringToLocalDateTime(rs.getString("updated_time"));
+                    product.setUpdatedTime(updatedTime);
+                }
+                products.add(product);
+                System.out.println(preparedStatement);
+            }
+        } catch (SQLException ex) {
+            AppUtils.printSQLException(ex);
+        }
+        return products;
+    }
+    @Override
+    public List<Product> sortDESC() {
+        List<Product> products = new ArrayList<>();
+        try {
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SORT_ALL_PRICE_DESC);
+            ResultSet rs = preparedStatement.executeQuery();
+            System.out.println(this.getClass() + " selectAllProduct " + preparedStatement);
+            while (rs.next()) {
+                String id = rs.getString("id");
+                String name = rs.getString("name");
+                int price = rs.getInt("price");
+                int quantity = rs.getInt("quantity");
+                String description = rs.getString("description");
+                String image = rs.getString("image");
+                Product product = new Product(id, name, price, quantity, description, image);
+                LocalDateTime createdTime = AppUtils.stringToLocalDateTime(rs.getString("created_time"));
+                product.setCreatedTime(createdTime);
+                if (rs.getString("updated_time") != null) {
+                    LocalDateTime updatedTime = AppUtils.stringToLocalDateTime(rs.getString("updated_time"));
+                    product.setUpdatedTime(updatedTime);
+                }
+                products.add(product);
+                System.out.println(preparedStatement);
+            }
+        } catch (SQLException ex) {
+            AppUtils.printSQLException(ex);
+        }
+        return products;
+    }
+
+    @Override
+    public List<Product> sortSearchASC(String sort) {
+        List<Product> products = new ArrayList<>();
+        try {
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SORT_SEARCH_ALL_PRICE_ASC);
+            preparedStatement.setString(1, "%" + sort + "%");
+            ResultSet rs = preparedStatement.executeQuery();
+            System.out.println(this.getClass() + " selectAllProduct " + preparedStatement);
+            while (rs.next()) {
+                String id = rs.getString("id");
+                String name = rs.getString("name");
+                int price = rs.getInt("price");
+                int quantity = rs.getInt("quantity");
+                String description = rs.getString("description");
+                String image = rs.getString("image");
+                Product product = new Product(id, name, price, quantity, description, image);
+                LocalDateTime createdTime = AppUtils.stringToLocalDateTime(rs.getString("created_time"));
+                product.setCreatedTime(createdTime);
+                if (rs.getString("updated_time") != null) {
+                    LocalDateTime updatedTime = AppUtils.stringToLocalDateTime(rs.getString("updated_time"));
+                    product.setUpdatedTime(updatedTime);
+                }
+                products.add(product);
+                System.out.println(preparedStatement);
+            }
+        } catch (SQLException ex) {
+            AppUtils.printSQLException(ex);
+        }
+        return products;
+    }
+
+    @Override
+    public List<Product> sortSearchDESC(String sort) {
+        List<Product> products = new ArrayList<>();
+        try {
+            Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(SORT_SEARCH_ALL_PRICE_DESC);
+            preparedStatement.setString(1, "%" + sort + "%");
+            ResultSet rs = preparedStatement.executeQuery();
+            System.out.println(this.getClass() + " selectAllProduct " + preparedStatement);
+            while (rs.next()) {
+                String id = rs.getString("id");
+                String name = rs.getString("name");
+                int price = rs.getInt("price");
+                int quantity = rs.getInt("quantity");
+                String description = rs.getString("description");
+                String image = rs.getString("image");
+                Product product = new Product(id, name, price, quantity, description, image);
+                LocalDateTime createdTime = AppUtils.stringToLocalDateTime(rs.getString("created_time"));
+                product.setCreatedTime(createdTime);
+                if (rs.getString("updated_time") != null) {
+                    LocalDateTime updatedTime = AppUtils.stringToLocalDateTime(rs.getString("updated_time"));
+                    product.setUpdatedTime(updatedTime);
+                }
+                products.add(product);
+                System.out.println(preparedStatement);
+            }
+        } catch (SQLException ex) {
+            AppUtils.printSQLException(ex);
+        }
+        return products;
     }
 
 }

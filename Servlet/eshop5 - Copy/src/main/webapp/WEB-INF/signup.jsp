@@ -109,7 +109,7 @@
                                     </div>
                                 </div>
                                 <div class="form-check d-flex justify-content-center mb-5">
-                                    <input class="form-check-input me-2" type="checkbox" value=""
+                                    <input required class="form-check-input me-2" type="checkbox" value=""
                                            id="form2Example3cg"/>
                                     <label class="form-check-label">
                                         I agree all statements in <a href="#!" class="text-body"><u>Terms of
