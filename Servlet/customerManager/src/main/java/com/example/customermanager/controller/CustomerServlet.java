@@ -53,16 +53,6 @@ public class CustomerServlet extends HttpServlet {
                 showEditCustomer(req, resp);
                 break;
             case "remove":
-//                requestDispatcher = req.getRequestDispatcher("/WEB-INF/admin/customer/delete.jsp");
-//                requestDispatcher.forward(req, resp);
-//
-//                long id = Long.parseLong(req.getParameter("id"));
-//                customerService.deleteCustomer(id);
-//
-////                resp.sendRedirect(req.getContextPath() + "/customer");
-//                req.setAttribute("customers", customerService.getAllCustomers());
-//                requestDispatcher = req.getRequestDispatcher("/WEB-INF/admin/customer/customers.jsp");
-//                requestDispatcher.forward(req, resp);
                 showDeleteCustomer(req, resp);
                 break;
             default:
