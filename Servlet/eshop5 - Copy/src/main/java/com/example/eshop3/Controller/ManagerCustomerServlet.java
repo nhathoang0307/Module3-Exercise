@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "manager-customer-Servlet", urlPatterns = {"/manager-customer"})
+@WebServlet(name = "manager-customer-servlet", urlPatterns = {"/manager-customer"})
 public class ManagerCustomerServlet extends HttpServlet {
     private IOrderItemService orderItemService = new OrderItemService();
     private IOrderService orderService = new OrderService();
@@ -24,7 +24,7 @@ public class ManagerCustomerServlet extends HttpServlet {
     private IProductService productService = new ProductService();
 
     public void init() {
-        System.out.println("init manager customer............................................");
+        System.out.println("init manager Customer............................................");
         if (this.getServletContext().getAttribute("listUser") == null) {
             this.getServletContext().setAttribute("listUser", userService.selectAllUser());
         }
@@ -42,14 +42,14 @@ public class ManagerCustomerServlet extends HttpServlet {
         } else {
             updateListCustomer();
         }
-        System.out.println("size customer: " + customerService.selectAllCustomer().size());
+        System.out.println("size Customer: " + customerService.selectAllCustomer().size());
 
     }
 
     private void updateListCustomer() {
         this.getServletContext().removeAttribute("listCustomer");
         this.getServletContext().setAttribute("listCustomer", customerService.selectAllCustomer());
-        System.out.println("size customer: " + customerService.selectAllCustomer().size());
+        System.out.println("size Customer: " + customerService.selectAllCustomer().size());
     }
 
     @Override
@@ -68,7 +68,7 @@ public class ManagerCustomerServlet extends HttpServlet {
                 requestDispatcher.forward(req, resp);
                 break;
             case "listNewcustomer":
-                List<Customer> customerListNew = customerService.selectAllNewCustomer();
+                List<com.example.eshop3.Model.Customer> customerListNew = customerService.selectAllNewCustomer();
                 req.setAttribute("customerListNew", customerListNew);
                 requestDispatcher = req.getRequestDispatcher("/WEB-INF/admin/customer/viewNew.jsp");
                 requestDispatcher.forward(req, resp);

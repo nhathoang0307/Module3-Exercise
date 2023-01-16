@@ -147,7 +147,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="/trangchu" class="nav-item nav-link active">Home</a>
+                        <a class="nav-item nav-link active" href="/trangchu" >Home</a>
                         <a href="#" class="nav-item nav-link">Shop</a>
                         <a href="#" class="nav-item nav-link">Shop Detail</a>
                         <div class="nav-item dropdown">

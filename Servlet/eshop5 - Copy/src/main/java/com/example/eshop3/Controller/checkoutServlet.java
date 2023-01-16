@@ -19,8 +19,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "checkoutServlet", urlPatterns = {"/checkout"})
-public class checkoutServlet extends HttpServlet {
+@WebServlet(name = "CheckoutServlet", urlPatterns = {"/checkout"})
+public class CheckoutServlet extends HttpServlet {
 
     private IUserService userService = new UserService();
     private IOrderItemService orderItemService = new OrderItemService();
@@ -59,8 +59,8 @@ public class checkoutServlet extends HttpServlet {
 
 
     protected void thanhtoan(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //        ----------insert customer
-        System.out.println("tien hanh insert customer");
+        //        ----------insert Customer
+        System.out.println("tien hanh insert Customer");
         String idCustomer = "CU" + System.currentTimeMillis() / 1000;
         String name = req.getParameter("namecustomer");
         String email = req.getParameter("emailcustomer");
@@ -69,7 +69,7 @@ public class checkoutServlet extends HttpServlet {
         LocalDateTime createdTime = LocalDateTime.now();
         Customer customer = new Customer(idCustomer, name, email, phone, address,createdTime);
         customerService.insertCustomer(customer);
-        System.out.println("insert customer xong");
+        System.out.println("insert Customer xong");
 
 //        ------------ OrderItem
         System.out.println("lay thong tin orderitem");
@@ -88,7 +88,6 @@ public class checkoutServlet extends HttpServlet {
             productService.setUpdateProductQuantity(quantityProduct-o.getQuantity(),o.getProductId());
             total += (o.getPrice() * o.getQuantity());
         }
-
         System.out.println("lay xong thong tin orderitem");
 
 
@@ -129,9 +128,9 @@ public class checkoutServlet extends HttpServlet {
             orderItem.setOrderId(order.getId());
             orderItemService.insertOrderItem(orderItem);
         }
+
         System.out.println("insert OrderITem xong");
         httpSessioncart.removeAttribute("carts");
-
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/customer/success.jsp");
         requestDispatcher.forward(req, resp);
     }

@@ -151,7 +151,7 @@
 <div class="container-fluid">
     <div class="row px-xl-5">
         <div class="col-12">
-            <ul class="pagination justify-content-end" style="">
+            <ul class="pagination justify-content-center" style="">
                 <c:if test="${currentPage != 1}">
                     <li class="page-item"> <a class="page-link" href="/user?page=${1}&q=${requestScope.q}&table4_length=${requestScope.recordsPerPage}">Previous</a></li>
                 </c:if>

@@ -23,6 +23,7 @@ public class ValidateUtils {
     public static boolean isNameValid(String name) {
         return Pattern.compile(NAME_REGEX).matcher(name).matches();
     }
+
     public static  boolean isPhoneValid(String number) {
         return Pattern.compile(PHONE_REGEX).matcher(number).matches();
     }

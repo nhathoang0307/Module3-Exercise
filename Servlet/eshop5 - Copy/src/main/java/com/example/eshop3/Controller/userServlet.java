@@ -15,7 +15,7 @@
 //import java.util.List;
 //
 //@WebServlet(name = "UserServlet", urlPatterns = "/user")
-//public class userServlet extends HttpServlet {
+//public class UserServlet extends HttpServlet {
 //
 //
 //    private IRoleService roleService = new RoleService();
@@ -50,7 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns = "/user")
-public class userServlet extends HttpServlet {
+public class UserServlet extends HttpServlet {
     private IOrderItemService orderItemService = new OrderItemService();
     private IOrderService orderService = new OrderService();
     private ICustomerService customerService = new CustomerService();
@@ -371,7 +371,7 @@ public class userServlet extends HttpServlet {
         userService.insertUser(user);
         updateListUser();
         request.setAttribute("message", "Create User Success ");
-        showView(request,response);
+        listUserPagging(request, response);
     }
 
     private void showCreate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

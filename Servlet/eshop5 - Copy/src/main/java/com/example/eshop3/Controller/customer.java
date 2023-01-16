@@ -12,14 +12,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @WebServlet(name = "customerServlet", urlPatterns = {"/trangchu", ""})
 
 
-public class customer extends HttpServlet {
+public class Customer extends HttpServlet {
     private IProductService ProductService;
 
     @Override

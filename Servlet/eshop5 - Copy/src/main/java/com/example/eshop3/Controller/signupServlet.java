@@ -3,7 +3,6 @@ package com.example.eshop3.Controller;
 import com.example.eshop3.Model.User;
 import com.example.eshop3.Servlet.IUserService;
 import com.example.eshop3.Servlet.implement.UserService;
-import com.sun.xml.internal.ws.addressing.WsaActionUtil;
 import utils.AppUtils;
 import utils.ValidateUtils;
 
@@ -14,22 +13,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
         maxFileSize = 1024 * 1024 * 50, // 50MB
         maxRequestSize = 1024 * 1024 * 50) // 50MB
 
-@WebServlet(name = "signupServlet", urlPatterns = "/signup")
-public class signupServlet extends HttpServlet {
+@WebServlet(name = "SignupServlet", urlPatterns = "/signup")
+public class SignupServlet extends HttpServlet {
     private IUserService userService = new UserService();
 
-    private loginServlet loginServlet = new loginServlet();
+    private LoginServlet loginServlet = new LoginServlet();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -81,6 +78,8 @@ public class signupServlet extends HttpServlet {
             userService.insertUser(newUser);
             HttpSession httpSession = request.getSession();
             httpSession.setAttribute("user",newUser);
+            HttpSession httpSessionmess = request.getSession();
+            httpSessionmess.setAttribute("usermess",newUser);
             request.setAttribute("message", "Sign Up Success");
             loginServlet.doPost(request,resp);
 //            requestDispatcher = request.getRequestDispatcher("/WEB-INF/login.jsp");

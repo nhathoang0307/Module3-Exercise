@@ -1,7 +1,5 @@
 package com.example.eshop3.Controller;
 
-import com.example.eshop3.Model.OrderItem;
-import com.example.eshop3.Model.Product;
 import com.example.eshop3.Servlet.*;
 import com.example.eshop3.Servlet.implement.*;
 
@@ -12,12 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet(name = "HomeServlet", urlPatterns = {"/home"})
 
-public class homeServlet extends HttpServlet {
+public class HomeServlet extends HttpServlet {
 
     private IOrderItemService orderItemService = new OrderItemService();
     private IOrderService orderService = new OrderService();

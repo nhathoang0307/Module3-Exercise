@@ -14,6 +14,27 @@
 
 <body>
 
+<div class="toast" data-autohide="true" style="position: fixed; top: 10px; right: 10px; z-index: 1000000">
+    <div class="toast-header">
+        <strong class="mr-auto text-primary">Shopping Cart</strong>
+        <small class="text-muted">1 mins ago</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body">
+        Edit success....ahii
+    </div>
+</div>
+<c:if test="${requestScope.message!=null}">
+    <script>
+        $(document).ready(function () {
+            let message = '<%= request.getAttribute("message")%>';
+            document.querySelector(".toast-body").innerText = message;
+            $('.toast').toast({delay: 5000});
+            $('.toast').toast('show');
+        });
+    </script>
+</c:if>
+
 <jsp:include page="/WEB-INF/admin/layout/topnav.jsp">
     <jsp:param name="totalUser" value="${applicationScope.listUser.size()}"/>
     <jsp:param name="totalCustomer" value="${applicationScope.listCustomer.size()}"/>

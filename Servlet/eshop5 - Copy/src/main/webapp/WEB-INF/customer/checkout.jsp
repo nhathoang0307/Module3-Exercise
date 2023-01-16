@@ -35,6 +35,29 @@
     <form method="post">
     <div class="row px-xl-5">
         <div class="col-lg-8">
+
+            <div class="toast" data-autohide="true" style="position: fixed; top: 10px; right: 10px; z-index: 1000000">
+                <div class="toast-header">
+                    <strong class="mr-auto text-primary">Shopping Cart</strong>
+                    <small class="text-muted">1 mins ago</small>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                </div>
+                <div class="toast-body">
+                    Edit success....ahii
+                </div>
+            </div>
+            <c:if test="${requestScope.message!=null}">
+                <script>
+                    $(document).ready(function () {
+                        let message = '<%= request.getAttribute("message")%>';
+                        document.querySelector(".toast-body").innerText = message;
+                        $('.toast').toast({delay: 5000});
+                        $('.toast').toast('show');
+                    });
+                </script>
+            </c:if>
+
+
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Billing Address</span>
             </h5>
             <div class="bg-light p-30 mb-5">
